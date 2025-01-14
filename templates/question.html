@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question {{ question_id + 1 }}</title>
+</head>
+<body>
+    <h1>Question {{ question_id + 1 }}:</h1>
+    <p>{{ question.question }}</p>
+    <form method="POST">
+        {% for option in question.options %}
+            <input type="radio" name="answer" value="{{ option }}" id="option-{{ loop.index }}" required>
+            <label for="option-{{ loop.index }}">{{ option }}</label><br>
+        {% endfor %}
+        <button type="submit">Next</button>
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
