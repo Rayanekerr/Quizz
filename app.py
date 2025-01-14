@@ -47,7 +47,7 @@ def quiz(question_id):
         # Store the user's answer in the session
         selected_option = request.form.get('answer')
         if not selected_option:
-            return render_template('question.html', question=questions[question_id], question_id=question_id, error="Please select an option.")
+            return render_template('question.html', question=questions[question_id], question_id=question_id, timer=15, error="Please select an option.")
 
         # Save the answer
         if 'answers' not in session:
@@ -61,30 +61,23 @@ def quiz(question_id):
         else:
             return redirect(url_for('result'))
 
-    return render_template('question.html', question=questions[question_id], question_id=question_id, error=None)
+    return render_template('question.html', question=questions[question_id], question_id=question_id, timer=15, error=None)
 
 @app.route('/result')
 def result():
-    # Récupérer les réponses depuis la session
+    # Retrieve answers from the session
     answers = session.get('answers', {})
-    
-    # Debug : Afficher les réponses stockées dans le terminal
-    print("Debug - Réponses stockées dans la session :", answers)
-    
-    # Calculer le score
+
+    # Calculate the score
     score = 0
     for i, question in enumerate(questions):
         correct_answer = question['answer']
         user_answer = answers.get(str(i))
-        
-        # Debug : Afficher la réponse correcte et celle de l'utilisateur
-        print(f"Question {i + 1}: Correcte: {correct_answer}, Utilisateur: {user_answer}")
-        
+
         if user_answer == correct_answer:
             score += 1
 
     return render_template('result.html', score=score, total=len(questions))
-
 
 if __name__ == '__main__':
     app.run(debug=True)
