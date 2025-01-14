@@ -52,7 +52,7 @@ questions = [
     },
     {
         "question": "What is Ethereum primarily known for?",
-        "options": ["Cryptocurrencyy", "Smart Contractss", "Decentralized Apps", "All of the above"],
+        "options": ["Cryptocurrencyy", "Smart Contractss", "Decentralized Appss", "All of the above"],
         "answer": "All of the above"
     }
 ]
