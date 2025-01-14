@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Question {{ question_id + 1 }}</title>
+    <script>
+        let timer = parseInt("{{ timer }}", 10); // Conversion explicite en entier
+        function countdown() {
+            const timerElement = document.getElementById('timer');
+            if (timer > 0) {
+                timer--;
+                timerElement.innerText = `Time left: ${timer} seconds`;
+                setTimeout(countdown, 1000);
+            } else {
+                // Redirige automatiquement vers la question suivante si le temps est écoulé
+                window.location.href = "{{ url_for('quiz', question_id=question_id + 1) }}";
+            }
+        }
+        window.onload = countdown;
+    </script>
 </head>
 <body>
     <h1>Question {{ question_id + 1 }}:</h1>
     <p>{{ question.question }}</p>
-    <form method="POST">
+    <p id="timer">Time left: {{ timer }} seconds</p>
+    <form method="POST" id="autoSubmit">
         {% for option in question.options %}
             <input type="radio" name="answer" value="{{ option }}" id="option-{{ loop.index }}" required>
             <label for="option-{{ loop.index }}">{{ option }}</label><br>
