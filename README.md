@@ -1,7 +1,4 @@
-# Quizz
-Quizz for decentralization technologies
-# Quizz
-Quizz for decentralization technologies
+
 # Documentation for Quiz Game
 
 ## Project Description
