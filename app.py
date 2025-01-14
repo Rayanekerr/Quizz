@@ -29,6 +29,31 @@ questions = [
             "None of the above"
         ],
         "answer": "A self-executing contract with the terms directly written into code"
+    },
+    {
+        "question": "What is the primary benefit of blockchain technology?",
+        "options": ["Centralization", "Decentralization", "Lower costs", "Faster processing"],
+        "answer": "Decentralization"
+    },
+    {
+        "question": "Who is credited with the creation of Bitcoin?",
+        "options": ["Vitalik Buterin", "Satoshi Nakamoto", "Elon Musk", "Craig Wright"],
+        "answer": "Satoshi Nakamoto"
+    },
+    {
+        "question": "Which consensus algorithm does Bitcoin use?",
+        "options": ["Proof of Stake", "Proof of Work", "Delegated Proof of Stake", "Byzantine Fault Tolerance"],
+        "answer": "Proof of Work"
+    },
+    {
+        "question": "What is the maximum supply of Bitcoin?",
+        "options": ["21 million", "18 million", "25 million", "Unlimited"],
+        "answer": "21 million"
+    },
+    {
+        "question": "What is Ethereum primarily known for?",
+        "options": ["Cryptocurrency", "Smart Contracts", "Decentralized Apps", "All of the above"],
+        "answer": "All of the above"
     }
 ]
 
