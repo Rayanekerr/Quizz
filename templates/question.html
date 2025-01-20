@@ -14,8 +14,8 @@
                 // Redirige automatiquement vers la question suivante si le temps est écoulé
                 window.location.href = "{{ url_for('quiz', question_id=question_id + 1) }}";
             }
-        
-        window.onload = countdown
+        }
+        window.onload = countdown;
     </script>
 </head>
 <body>
